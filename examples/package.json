@@ -1,0 +1,15 @@
+{
+  "name": "mapas",
+  "description": "mapas",
+  "version": "0.0.1",
+  "homepage": "http://unloquer.org",
+  "author": "Un/loquer",
+  "repository": "",
+  "engines": {
+    "node": ">= 0.6.14"
+  },
+  "dependencies": {
+    "express": "3.0.3",
+    "webrtc.io": "0.0.2-3"
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "node-peerconnection"
+  , "version": "0.1.0"
+  , "description": "WebRTC PeerConnection in Node.JS!"
+  , "keywords": []
+  , "author": "Sofrit0 <sgaviria@gmail.com>"
+  , "dependencies": {
+  	   "colors": "latest"
+     , "ws": "latest"
+	 , "express": "latest"
+
+	 , "console-trace": "latest"
+	 , "optimist": "latest"
+  }
+  , "private": true
+  , "main": "index"
+  , "engines": { "node": "0.8.x" }
+}
