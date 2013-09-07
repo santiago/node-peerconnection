@@ -1,33 +1,26 @@
 {
-  "includes": [ "/home/santiago/webrtc/trunk/third_party/webrtc/build/common.gypi" ],
-  "variables": {
-    "webrtc_home": "/home/santiago/webrtc/trunk",
-    "webrtc_root%": "/home/santiago/webrtc/trunk/third_party/webrtc"
-  },
+  # "includes": ["deps/webrtc/webrtc.gyp"],
+  'includes': [ 'deps/webrtc/third_party/webrtc/build/common.gypi', ],
   "targets": [
     {
-      "target_name": "binding",
-      "sources": [ "src/bindings.cc", "src/PeerConnection.cc" ],
-      
-      "dependencies": [
-        "<(webrtc_home)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp",
-        "<(webrtc_home)/third_party/libjingle/libjingle.gyp:*"
+      "target_name": "webrtc",
+      "sources": [ 
+        "src/bindings.cc", 
+        "src/peer_connection_client.cc", 
+        "src/node_peer_connection_client.cc",
+        "deps/webrtc/third_party/libjingle/source/talk/examples/peerconnection/client/defaults.cc"
       ],
-      "include_dirs": [
-        "<(webrtc_home)/third_party/libjingle/source"
-        "<(webrtc_home)/third_party/webrtc",
-        "<(webrtc_home)/third_party/webrtc/modules/interface",
 
+      "dependencies": [
+        'deps/webrtc/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+        'deps/webrtc/third_party/libjingle/libjingle.gyp:libjingle_peerconnection',
       ],
-      "link_settings": {
-        "ldflags": [],
-        "libraries": [
-          "-lX11",
-          "-lXcomposite",
-          "-lXext",
-          "-lXrender"
-        ]
-      }
+
+      "include_dirs": [
+        "deps/webrtc/third_party/libjingle/source/talk/examples/peerconnection/client",
+        "deps/webrtc/third_party/webrtc",
+        "deps/webrtc/third_party/libjingle/source"
+      ]
     }
   ]
 }

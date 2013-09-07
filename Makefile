@@ -57,7 +57,8 @@ INCLUDE_DIRS = -I/usr/include/nodejs/  \
 	-I$(WEBRTC_ROOT_PATH)/third_party/ \
 	-I$(WEBRTC_ROOT_PATH)/third_party/libjingle/source \
 	-I$(WEBRTC_ROOT_PATH)/third_party/libjingle/overrides \
-	-I$(WEBRTC_ROOT_PATH)/testing/gtest/include
+	-I$(WEBRTC_ROOT_PATH)/testing/gtest/include \
+  -I/home/santiago/Projects/node-peerconnection/src 
 
 BUILD_DIR = build/
 NODE_MODULE = webrtc.node
@@ -95,7 +96,8 @@ WEBRTC_LIBS_TRUNK := $(WEBRTC_LIB_BUILD).target/third_party/libjingle/libjingle_
     $(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/video_coding/codecs/vp8/libwebrtc_vp8.a \
 		$(WEBRTC_LIB_BUILD).target/third_party/libyuv/libyuv.a \
 		$(WEBRTC_LIB_BUILD).target/third_party/libjpeg_turbo/libjpeg_turbo.a \
-		$(WEBRTC_LIB_BUILD).target/third_party/libvpx/libvpx.a \
+		#$(WEBRTC_LIB_BUILD).target/third_party/libvpx/libvpx.a \
+    /usr/lib/x86_64-linux-gnu/libvpx.a \
 		$(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libvideo_render_module.a \
 		$(WEBRTC_LIB_BUILD).target/third_party/webrtc/video_engine/libvideo_engine_core.a \
 		$(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libmedia_file.a \
@@ -115,11 +117,11 @@ WEBRTC_LIBS_TRUNK := $(WEBRTC_LIB_BUILD).target/third_party/libjingle/libjingle_
 		$(WEBRTC_LIB_BUILD).target/third_party/libjingle/libjingle_p2p.a
 
     # $(WEBRTC_LIB_BUILD).target/third_party/webrtc/common_video/libwebrtc_libyuv.a \
-  	# $(WEBRTC_LIB_BUILD).target/third_party/webrtc/common_video/libwebrtc_jpeg.a \
+    # $(WEBRTC_LIB_BUILD).target/third_party/webrtc/common_video/libwebrtc_jpeg.a \
     # $(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libaec.a \
-  	# $(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libapm_util.a \
+    # $(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libapm_util.a \
 		# $(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libaec_sse2.a \
-  	# $(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libaecm.a \
+    # $(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libaecm.a \
 		# $(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libagc.a \
 		# $(WEBRTC_LIB_BUILD).target/third_party/webrtc/modules/libns.a \
 

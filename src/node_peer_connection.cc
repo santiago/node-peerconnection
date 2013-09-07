@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2012 Sofrit0 <sgaviria@gmail.com>
 //
-#include "PeerConnection.h"
+#include "node_peer_connection.h"
 
 #include "talk/base/logging.h"
 #include "talk/app/webrtc/peerconnection.h"
@@ -23,7 +23,7 @@ namespace NodePeerConnection {
     constructor-> InstanceTemplate()-> SetInternalFieldCount(1);
     constructor-> SetClassName(String::NewSymbol("PeerConnection"));
 
-    Local<ObjectTemplate> proto = constructor->PrototypeTemplate();
+    // Local<ObjectTemplate> proto = constructor->PrototypeTemplate();
     // Browser API
     NODE_SET_PROTOTYPE_METHOD(constructor, "addStream", AddStream);
     NODE_SET_PROTOTYPE_METHOD(constructor, "removeStream", RemoveStream);
@@ -117,6 +117,11 @@ namespace NodePeerConnection {
     peerconnection->Wrap(args.This());
     return args.This();
   }
+
+  PeerConnection::PeerConnection() : ObjectWrap() {
+  };
+  
+  ~PeerConnection::PeerConnection() {};
 
   Handle<Value> PeerConnection::AddStream(const Arguments & args) {
     /*if (active_streams_.find(kStreamLabel) != active_streams_.end())

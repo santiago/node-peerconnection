@@ -22,7 +22,7 @@ namespace NodePeerConnection {
   extern const char kVideoLabel[];
   extern const char kStreamLabel[];
 
-  class PeerConnection: public node::ObjectWrap, public webrtc::PeerConnectionObserver {
+  class PeerConnection: ObjectWrap, webrtc::PeerConnectionObserver {
     public:
       PeerConnection();
       virtual ~PeerConnection();
